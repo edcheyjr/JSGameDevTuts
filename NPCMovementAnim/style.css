@@ -11,3 +11,17 @@ body {
   height: 1000px;
   width: 500px;
 }
+
+.controls {
+  position: absolute;
+  z-index: 10;
+  top: 50px;
+  left: 70%;
+  translate: translateX(-50%);
+}
+.controls,
+select,
+option {
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
