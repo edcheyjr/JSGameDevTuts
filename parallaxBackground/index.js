@@ -50,12 +50,12 @@ window.addEventListener('load', () => {
       obj.update()
       obj.draw(ctx)
     })
-    layer4.update()
-    layer4.draw(ctx)
-    layer3.update()
-    layer3.draw(ctx)
-    layer5.update()
-    layer5.draw(ctx)
+    // layer4.update()
+    // layer4.draw(ctx)
+    // layer3.update()
+    // layer3.draw(ctx)
+    // layer5.update()
+    // layer5.draw(ctx)
     requestAnimationFrame(animate)
   }
 
