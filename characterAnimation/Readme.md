@@ -14,8 +14,6 @@ This illustration how one can achieve various animation using just js, css and h
 
 ### What it covers
 
-- classes in Javascript
-- extend, child and parent classes
 - game techniques in character animation
 
 ### conclusion
