@@ -23,4 +23,9 @@ This is a simple illustration of how to attach sound to game objects
 
 ### conclusion
 
-Parallax background are often used in 3d platformer games
+**Key points**
+
+- understand how the images are looped at different speed
+- how the different speed co-relate to game speed look at [layer.js]("./layer.js")
+
+Parallax background are often used in 3d platformer games.
