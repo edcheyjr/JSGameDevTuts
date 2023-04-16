@@ -1,7 +1,7 @@
 // dom elements
 const canvas = document.getElementById('canvas1')
 const select = document.querySelector('#animations')
-console.log('select', select)
+// console.log('select', select)
 // events
 let playerState = 'idle'
 
