@@ -6,10 +6,24 @@ body {
 
 #canvas {
   width: 900px;
-  height: 1000px;
+  height: 800px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: 3px solid black;
+}
+
+.controls {
+  position: absolute;
+  z-index: 10;
+  top: 50px;
+  left: 50%;
+  translate: translateX(-50%);
+}
+.controls,
+select,
+option {
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
 }
