@@ -21,4 +21,4 @@ This is a simple illustration of how to attach sound to game objects
 
 ### conclusion
 
-It was fun to learn this how you do to learn something ☺
+It was fun to learn this hope you did learn something ☺
