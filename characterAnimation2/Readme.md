@@ -14,7 +14,9 @@ This illustration how object orient could be use in games to keep you code clean
 
 ### What it covers
 
+- basic js css and html
 - classes in Javascript
+- sprite animation
 - extend, child and parent classes
 - game techqunies in character animation
 - object pooling character movements
