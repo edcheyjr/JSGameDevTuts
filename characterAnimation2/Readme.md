@@ -26,7 +26,7 @@ This illustration how object orient could be use in games to keep you code clean
 - classes in Javascript
 - sprite animation
 - extend, child and parent classes
-- game techqunies in character animation
+- game techniques in character animation
 - object pooling character movements
 
 ### conclusion
