@@ -34,22 +34,21 @@ straight line with sudden burst of speed
 Bat Enemy
 </td>
 <td>
-<!-- TODO -->
+vibrating motion
 </td>
 </tr>
 <td>
 Bat 2 Enemy
 </td>
 <td>
-<!-- TODO -->
-
+wavy pattern to the left
 </td>
 </tr>
 <td>
  Ghost Enemy
 </td>
 <td>
-<!-- TODO -->
+follow curvy path
 </td>
 </tr>
 </tbody>
