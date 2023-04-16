@@ -9,7 +9,7 @@ This illustration how object orient could be use in games to keep you code clean
 <div>
 <!-- images go here -->
 <video
- src="./illustration.mp4" 
+ src="illustration.mp4" 
  alt="illustration video"
   controls ="true"
     webkit-playsinline="true"

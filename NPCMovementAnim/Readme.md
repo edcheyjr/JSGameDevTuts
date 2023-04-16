@@ -58,7 +58,7 @@ follow curvy path
 <div>
 <!-- images go here -->
 <video
- src="./illustration.mp4" 
+ src="illustration.mp4" 
  alt="illustration video"
   controls ="true"
     webkit-playsinline="true"

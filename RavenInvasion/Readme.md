@@ -9,7 +9,7 @@ This is a simple game putting together thing i have learnt on game dev
 <div>
 <!-- images go here -->
 <video
- src="./illustration.mp4" 
+ src="illustration.mp4" 
  alt="illustration video"
   controls ="true"
     webkit-playsinline="true"

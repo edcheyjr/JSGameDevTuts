@@ -9,7 +9,7 @@ This is a simple illustration of how to attach sound to game objects
 <div>
 <!-- images go here -->
 <video
- src="./illustration.mp4" 
+ src="illustration.mp4" 
  alt="illustration video"
   controls ="true"
     webkit-playsinline="true"
