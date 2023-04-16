@@ -14,6 +14,8 @@ This illustration how one can achieve various animation using just js, css and h
 
 ### What it covers
 
+- basic js css and html
 - game techniques in character animation
+- sprite animation
 
 ### conclusion
