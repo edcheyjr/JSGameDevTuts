@@ -5,18 +5,18 @@
  * will act as the base class for each enemy class
  */
 class Enemy {
-  constructor(image, imageSrc, spriteWidth, spriteHeight, x, y, ratio) {
-    this.image = image
-    this.image.src = imageSrc
-
-    this.spriteWidth = spriteWidth
-    this.spriteHeight = spriteHeight
-    this.width = this.spriteWidth / ratio
-    this.height = this.spriteHeight / ratio
-    this.x = x
-    this.y = y
+  constructor(gameObj) {
+    this.image = gameObj.image
+    this.name = gameObj.name
+    this.image.src = gameObj.imageSrc
+    this.spriteWidth = gameObj.spriteWidth
+    this.spriteHeight = gameObj.spriteHeight
+    this.ratio = gameObj.ratio
+    this.width = this.spriteWidth / this.ratio
+    this.height = this.spriteHeight / this.ratio
+    this.x = gameObj.x
+    this.y = gameObj.y
     this.frame = 0
-    this.ratio = ratio
     this.update
     this.draw
   }
@@ -41,16 +41,22 @@ class Enemy {
  */
 
 class BatEnemy extends Enemy {
-  constructor(image, imageSrc = './assets/enemy1.png', ratio = 2.5) {
-    super(
+  constructor(
+    image,
+    name = 'bat2',
+    imageSrc = './assets/enemy1.png',
+    ratio = 2.5
+  ) {
+    super({
       image,
+      name,
       imageSrc,
-      293,
-      155,
-      Math.random() * (canvas.width - 293 / ratio),
-      Math.random() * (canvas.height - 155 / ratio),
-      ratio
-    )
+      spriteWidth: 293,
+      spriteHeight: 155,
+      x: Math.random() * (canvas.width - 293 / ratio),
+      y: Math.random() * (canvas.height - 155 / ratio),
+      ratio,
+    })
     this.flapSpeed = Math.floor(Math.random() * 4 + 1)
   }
   update(gameFrame) {
@@ -68,16 +74,22 @@ class BatEnemy extends Enemy {
  * Bat Two enemy
  */
 class BatTwoEnemy extends Enemy {
-  constructor(image, imageSrc = './assets/enemy2.png', ratio = 2.5) {
-    super(
+  constructor(
+    image,
+    name = 'bat2',
+    imageSrc = './assets/enemy2.png',
+    ratio = 2.5
+  ) {
+    super({
       image,
+      name,
       imageSrc,
-      266,
-      188,
-      Math.random() * (canvas.width - 266 / ratio),
-      Math.random() * (canvas.height - 188 / ratio),
-      ratio
-    )
+      spriteWidth: 266,
+      spriteHeight: 188,
+      x: Math.random() * (canvas.width - 266 / ratio),
+      y: Math.random() * (canvas.height - 188 / ratio),
+      ratio,
+    })
     this.flapSpeed = Math.floor(Math.random() * 4 + 1)
     this.speed = Math.random() * 3 + 1
     this.angle = 0
@@ -104,16 +116,22 @@ class BatTwoEnemy extends Enemy {
  */
 
 class GhostEnemy extends Enemy {
-  constructor(image, imageSrc = './assets/enemy3.png', ratio = 2.5) {
-    super(
+  constructor(
+    image,
+    name = 'ghost',
+    imageSrc = './assets/enemy3.png',
+    ratio = 2.5
+  ) {
+    super({
       image,
+      name,
       imageSrc,
-      218,
-      177,
-      Math.random() * (canvas.width - 218 / ratio),
-      Math.random() * (canvas.height - 177 / ratio),
-      ratio
-    )
+      spriteWidth: 218,
+      spriteHeight: 177,
+      x: Math.random() * (canvas.width - 218 / ratio),
+      y: Math.random() * (canvas.height - 177 / ratio),
+      ratio,
+    })
     this.speed = Math.random() * 3 + 1
     this.angle = Math.random() * 500
     this.angleSpeed = Math.random() * 1 + 0.5
@@ -145,16 +163,22 @@ class GhostEnemy extends Enemy {
 }
 
 class SpikeEnemy extends Enemy {
-  constructor(image, imageSrc = './assets/enemy4.png', ratio = 2.5) {
-    super(
+  constructor(
+    image,
+    name = 'spike',
+    imageSrc = './assets/enemy4.png',
+    ratio = 2.5
+  ) {
+    super({
       image,
+      name,
       imageSrc,
-      213,
-      213,
-      Math.random() * (canvas.width - 218 / ratio),
-      Math.random() * (canvas.height - 177 / ratio),
-      ratio
-    )
+      spriteWidth: 213,
+      spriteHeight: 213,
+      x: Math.random() * (canvas.width - 218 / ratio),
+      y: Math.random() * (canvas.height - 177 / ratio),
+      ratio,
+    })
     this.newX = Math.random() * (canvas.width - 218 / ratio)
     this.newY = Math.random() * (canvas.height - 177 / ratio)
     this.speed = Math.random() * 3 + 1
