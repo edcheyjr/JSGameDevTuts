@@ -10,7 +10,15 @@ Color `RED` means collided Color `GREEN` means not collided
 
 <div>
 <!-- images go here -->
-<video src="./illustration.mp4" alt="illustration video" controls>
+<video
+ src="./illustration.mp4" 
+ alt="illustration video"
+  controls ="true"
+    webkit-playsinline="true"
+    playsinline="true"
+    style="background-color: rgb(0, 0, 0); position: absolute; width: 640px; height: 360px;"
+    autoplay="true"
+>
 </video>
 </div>
 
