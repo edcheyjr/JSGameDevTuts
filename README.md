@@ -28,7 +28,7 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 
 <div>
 
-[demo](./parallaxBackground/illustration.mp4)
+[<img src="/parallaxBackground/illustration.gif" alt="character Animation illustration"/>](/parallaxBackground/Readme.md)
 
 </div>
 <!-- details here -->
@@ -50,7 +50,7 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 
 <div>
 
-[demo](/AttachingSoundToGameObjects/illustration.mp4)
+[<img src="/parallaxBackground/illustration.gif" alt="character Animation illustration"/>](/NPCMovementAnim/Readme.md)
 
 </div>
 <!-- details here -->
