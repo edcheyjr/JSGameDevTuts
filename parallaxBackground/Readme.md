@@ -11,7 +11,7 @@ This is a simple illustration of how to attach sound to game objects
 <div>
 <!-- images go here -->
 
-[demo](illustration.mp4)
+<img src="./illustration.gif" alt="character Animation illustration"/>
 
 </div>
 
