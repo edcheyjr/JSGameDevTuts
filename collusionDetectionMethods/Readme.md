@@ -11,7 +11,7 @@ Color `RED` means collided Color `GREEN` means not collided
 <div>
 <!-- images go here -->
 
-[demo](illustration.mp4)
+<img src="./illustration.gif" alt="character Animation illustration"/>
 
 </div>
 
