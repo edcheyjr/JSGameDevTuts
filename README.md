@@ -6,7 +6,7 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 
 <div>
 
-[<img src="./illustration.gif" alt="character Animation illustration"/>](./characterAnimation/Readme.md)
+[<img src="/characterAnimation/illustration.gif" alt="character Animation illustration"/>](./characterAnimation/Readme.md)
 
 </div>
 <!-- details here -->
