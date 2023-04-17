@@ -5,16 +5,9 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 ### PROJECT 1: **[character animation](./characterAnimation/Readme.md)**
 
 <div>
-<video
- src="/characterAnimation/illustration.mp4" 
- alt="illustration video"
-  controls ="true"
-    webkit-playsinline="true"
-    playsinline="true"
-    style="background-color: rgb(0, 0, 0); position: absolute; width: 640px; height: 360px;"
-    autoplay="true"
->
-</video>
+
+[demo](/characterAnimation/illustration.mp4)
+
 </div>
 <!-- details here -->
 
@@ -23,16 +16,9 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 ### PROJECT 2: **[character animation2](./characterAnimation2/Readme.md)**
 
 <div>
-<video
- src="/characterAnimation2/illustration.mp4" 
- alt="illustration video"
-  controls ="true"
-    webkit-playsinline="true"
-    playsinline="true"
-    style="background-color: rgb(0, 0, 0); position: absolute; width: 640px; height: 360px;"
-    autoplay="true"
->
-</video>
+
+[demo](./characterAnimation2/illustration.mp4)
+
 </div>
 <!-- details here -->
 
@@ -41,16 +27,9 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 ### PROJECT 3: **[parallax background](/parallaxBackground/Readme.md)**
 
 <div>
-<video
- src="/parallaxBackground/illustration.mp4" 
- alt="illustration video"
-  controls ="true"
-    webkit-playsinline="true"
-    playsinline="true"
-    style="background-color: rgb(0, 0, 0); position: absolute; width: 640px; height: 360px;"
-    autoplay="true"
->
-</video>
+
+[demo](./parallaxBackground/illustration.mp4)
+
 </div>
 <!-- details here -->
 
@@ -59,16 +38,9 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 ### PROJECT 4: **[sound attachment to game object](/AttachingSoundToGameObjects/Readme.md)**
 
 <div>
-<video
- src="/AttachingSoundToGameObjects/illustration.mp4" 
- alt="illustration video"
-  controls ="true"
-    webkit-playsinline="true"
-    playsinline="true"
-    style="background-color: rgb(0, 0, 0); position: absolute; width: 640px; height: 360px;"
-    autoplay="true"
->
-</video>
+
+[demo](./characterAnimation/illustration.mp4)
+
 </div>
 <!-- details here -->
 
@@ -77,16 +49,8 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 ### PROJECT 5: **[NPCMovementAnim](/NPCMovementAnim/Readme.md)**
 
 <div>
-<video
- src="/NPCMovementAnim/illustration.mp4" 
- alt="illustration video"
-  controls ="true"
-    webkit-playsinline="true"
-    playsinline="true"
-    style="background-color: rgb(0, 0, 0); position: absolute; width: 640px; height: 360px;"
-    autoplay="true"
->
-</video>
+
+[demo](/AttachingSoundToGameObjects/illustration.mp4)
 
 </div>
 <!-- details here -->
@@ -96,34 +60,20 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 ### PROJECT 6: **[CollusionDetection](/collusionDetectionMethods/Readme.md)**
 
 <div>
-<video
- src="/collusionDetectionMethods/illustration.mp4" 
- alt="illustration video"
-  controls ="true"
-    webkit-playsinline="true"
-    playsinline="true"
-    style="background-color: rgb(0, 0, 0); position: absolute; width: 640px; height: 360px;"
-    autoplay="true"
->
-</video>
+
+[demo](/collusionDetectionMethods/illustration.mp4)
+
 </div>
 <!-- details here -->
 
-[see more](/collusionDetectionMethods//Readme.md)
+[see more](/collusionDetectionMethods/Readme.md)
 
 ### PROJECT 7 : **[RAVENINVASION](/RavenInvasion/Readme.md)**
 
 <div>
-<video
- src="/RavenInvasion/illustration.mp4" 
- alt="illustration video"
-  controls ="true"
-    webkit-playsinline="true"
-    playsinline="true"
-    style="background-color: rgb(0, 0, 0); position: absolute; width: 640px; height: 360px;"
-    autoplay="true"
->
-</video>
+
+[demo](/RavenInvasion/illustration.mp4)
+
 </div>
 <!-- details here -->
 [see more](/RavenInvasion/Readme.md)
