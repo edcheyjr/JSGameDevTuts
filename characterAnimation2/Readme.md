@@ -9,7 +9,7 @@ This illustration how object orient could be use in games to keep you code clean
 <div>
 <!-- images go here -->
 
-<img src="./illustration.gif" alt="character Animation illustration"/>
+<img src="./illustration.gif" alt="character2 Animation illustration"/>
 
 </div>
 

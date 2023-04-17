@@ -17,7 +17,7 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 
 <div>
 
-[demo](./characterAnimation2/illustration.mp4)
+[<img src="/characterAnimation2/illustration.gif" alt="character Animation illustration"/>](./characterAnimation2/Readme.md)
 
 </div>
 <!-- details here -->
