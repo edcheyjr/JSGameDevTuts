@@ -47,7 +47,7 @@ let position =Math.floor(gameFrame / staggerFrames) % spriteAnimations[playerSta
 <div>
 <!-- images go here -->
 
-[demo](illustration.mp4)
+  <img src="./illustration.gif" alt="character Animation illustration"/>
 
 </div>
 

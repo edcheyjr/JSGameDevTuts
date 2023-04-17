@@ -6,7 +6,7 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 
 <div>
 
-[demo](/characterAnimation/illustration.mp4)
+[<img src="./illustration.gif" alt="character Animation illustration"/>](./characterAnimation/Readme.md)
 
 </div>
 <!-- details here -->
@@ -68,7 +68,7 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 
 [see more](/collusionDetectionMethods/Readme.md)
 
-### PROJECT 7 : **[RAVENINVASION](/RavenInvasion/Readme.md)**
+### PROJECT 7 : **[RavenInvasion](/RavenInvasion/Readme.md)**
 
 <div>
 
@@ -76,9 +76,10 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 
 </div>
 <!-- details here -->
+
 [see more](/RavenInvasion/Readme.md)
 
-### PROJECT 8 : **[DOGRUNRUNRUN](/GetDogHome/Readme.md)**
+### PROJECT 8 : **[Dogrunrunrun](/GetDogHome/Readme.md)**
 
 <div>
 <italics>
@@ -86,4 +87,5 @@ comming soon
 </italics>
 </div>
 <!-- details here -->
+
 [see more](/GetDogHome/Readme.md)
