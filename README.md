@@ -39,7 +39,7 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 
 <div>
 
-[demo](./characterAnimation/illustration.mp4)
+[<img src="/AttachingSoundToGameObjects/illustration.gif" alt="character Animation illustration"/>](/AttachingSoundToGameObjects/Readme.md)
 
 </div>
 <!-- details here -->
@@ -50,7 +50,7 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 
 <div>
 
-[<img src="/parallaxBackground/illustration.gif" alt="character Animation illustration"/>](/NPCMovementAnim/Readme.md)
+[<img src="/NPCMovementAnim/illustration.gif" alt="character Animation illustration"/>](/NPCMovementAnim/Readme.md)
 
 </div>
 <!-- details here -->
@@ -61,7 +61,7 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 
 <div>
 
-[demo](/collusionDetectionMethods/illustration.mp4)
+[<img src="/collusionDetectionMethods/illustration.gif" alt="character Animation illustration"/>](/collusionDetectionMethods/Readme.md)
 
 </div>
 <!-- details here -->
@@ -71,9 +71,7 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 ### PROJECT 7 : **[RavenInvasion](/RavenInvasion/Readme.md)**
 
 <div>
-
-[demo](/RavenInvasion/illustration.mp4)
-
+[<img src="/RavenInvasion/illustration.gif" alt="character Animation illustration"/>](/RavenInvasion/Readme.md)
 </div>
 <!-- details here -->
 
