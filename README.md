@@ -71,7 +71,9 @@ All of ths projects are thanks to Franks and [Franks Laboratory](https://www.you
 ### PROJECT 7 : **[RavenInvasion](/RavenInvasion/Readme.md)**
 
 <div>
+
 [<img src="/RavenInvasion/illustration.gif" alt="character Animation illustration"/>](/RavenInvasion/Readme.md)
+
 </div>
 <!-- details here -->
 

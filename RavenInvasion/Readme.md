@@ -8,7 +8,7 @@ This is a simple game putting together thing i have learnt on game dev
 
 <div>
 <!-- images go here -->
-<img src="./illustration.gif" alt="character Animation illustration"/>
+<img src="./illustration.gif" alt="raven invasion"/>
 
 </div>
 
