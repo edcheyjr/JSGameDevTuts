@@ -10,7 +10,7 @@ const KEY_LEFT = 'ArrowLeft'
 window.addEventListener('load', () => {
   const canvas = document.getElementById('canvas1')
   const CANVAS_WIDTH = (canvas.width = 800)
-  const CANVAS_HEIGHT = (canvas.height = 800)
+  const CANVAS_HEIGHT = (canvas.height = 720)
   const ctx = canvas.getContext('2d')
 
   class InputHandler {
@@ -52,23 +52,9 @@ window.addEventListener('load', () => {
       this.frameY = 1
       this.speed = 0
       this.vy = 0
-    }
-    update(deltaTime, input) {
-      this.x += this.speed
-
-      // horizontal movement;
-      if (
-        input.keys.indexOf(KEY_RIGHT) > -1 &&
-        this.x < this.gameWidth - this.width
-      ) {
-        this.speed = 5
-      } else if (input.keys.indexOf(KEY_LEFT) > -1 && this.x > 0) {
-        this.speed = -5
-      } else {
-        this.speed = 0
-      }
-      this.y += this.vy
-      // vertical movement
+      this.gravity = 1
+      this.offsetPixel = 5
+      this.jumpVelocity = 24
     }
     draw(context) {
       context.drawImage(
@@ -83,19 +69,110 @@ window.addEventListener('load', () => {
         this.height
       )
     }
+    update(deltaTime, input) {
+      if (input.keys.indexOf(KEY_RIGHT) > -1) {
+        this.speed = 5
+      } else if (input.keys.indexOf(KEY_LEFT) > -1) {
+        this.speed = -5
+      } else if (input.keys.indexOf(KEY_UP) > -1 && this.#onGround()) {
+        this.vy -= this.jumpVelocity
+      } else {
+        this.speed = 0
+      }
+      // horizontal movement;
+      this.x += this.speed
+      if (this.x < 0) {
+        this.x = 0
+      } else if (this.x > this.gameWidth - this.width) {
+        this.x = this.gameWidth - this.width
+      }
+
+      // vertical movement
+      this.y += this.vy
+      if (!this.#onGround()) {
+        this.vy += this.gravity
+        this.frameY = 1 // jump animation
+      } else {
+        this.frameY = 0 // run animation
+        this.vy = 0
+      }
+
+      // ground level vertical boundary
+      if (this.y >= this.gameHeight - this.height) {
+        this.y = this.gameHeight - this.height
+      }
+    }
+
+    // checks if the player is on ground
+    #onGround() {
+      return this.y >= this.gameHeight - this.height - this.offsetPixel
+    }
   }
 
-  class Background {}
-  class Enemy {}
+  class Background {
+    constructor(gameWidth, gameHeight) {
+      this.gameWidth = gameWidth
+      this.gameHeight = gameHeight
+      this.image = document.getElementById('bg')
+      this.x = 0
+      this.y = 0
+      this.width = 2400
+      this.height = 720
+      this.speed = 5
+    }
+    draw(context) {
+      context.drawImage(this.image, this.x, this.y, this.width, this.height)
+      context.drawImage(
+        this.image,
+        this.x + this.width - this.speed,
+        this.y,
+        this.width,
+        this.height
+      )
+    }
+
+    update() {
+      this.x -= this.speed
+      if (this.x < 0 - this.width) this.x = 0
+    }
+  }
+  class Enemy {
+    constructor(gameWidth, gameHeight) {
+      this.gameWidth = gameWidth
+      this.gameHeight = gameHeight
+      this.width = 160
+      this.height = 119
+      this.image = document.getElementById('enemy')
+    }
+    draw() {
+      context.drawImage(
+        this.image,
+        0,
+        0,
+        this.width,
+        this.height,
+        this.x,
+        this.y,
+        this.width,
+        this.height
+      )
+    }
+    update() {}
+  }
 
   function handleEnemies() {}
   function handleDisplayStatusTxt() {}
 
   const input = new InputHandler()
   const player = new Player(CANVAS_WIDTH, CANVAS_HEIGHT)
+  const background = new Background(CANVAS_WIDTH, CANVAS_HEIGHT)
+  const ene
+
   // animation loop
   function animate(deltaTime) {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
+    background.draw(ctx)
+    background.update()
     player.draw(ctx)
     player.update(deltaTime, input)
     requestAnimationFrame(animate)
