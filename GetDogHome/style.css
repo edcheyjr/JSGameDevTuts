@@ -3,7 +3,7 @@ body {
 }
 
 #canvas1 {
-  background-color: blue;
+  background-color: transparent;
   position: absolute;
   top: 50%;
   left: 50%;
