@@ -221,6 +221,8 @@ window.addEventListener('load', () => {
     })
     enemies = enemies.filter((enemy) => !enemy.isMarkedDeletion)
 
+    console.log('enemies', enemies)
+  }
   function handleDisplayStatusTxt(context) {
     context.fillStyle = 'black'
     context.font = '40px  Helvetica'
