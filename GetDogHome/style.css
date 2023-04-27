@@ -12,6 +12,6 @@ body {
 }
 #player,
 #bg,
-#enemy1 {
+#enemy {
   display: none;
 }
