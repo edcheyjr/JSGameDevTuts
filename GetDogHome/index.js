@@ -233,7 +233,8 @@ window.addEventListener('load', () => {
   const input = new InputHandler()
   const player = new Player(CANVAS_WIDTH, CANVAS_HEIGHT)
   const background = new Background(CANVAS_WIDTH, CANVAS_HEIGHT)
-  const ene
+
+  let lastTime = 0
 
   // animation loop
   function animate(timeStamp) {
