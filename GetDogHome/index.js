@@ -168,6 +168,7 @@ window.addEventListener('load', () => {
       this.frameInterval = 1000 / this.fps
       this.frameX = 0
       this.speed = 8
+      this.isMarkedDeletion = false
     }
     draw() {
       context.drawImage(
@@ -195,6 +196,8 @@ window.addEventListener('load', () => {
         this.frameTimer += deltaTime
       }
       this.x -= this.speed
+      if (this.x < 0 - this.width) this.isMarkedDeletion = true
+    }
   }
 
   function handleDisplayStatusTxt() {}
@@ -214,6 +217,7 @@ window.addEventListener('load', () => {
       enemy.draw(ctx)
       enemy.update(deltaTime)
     })
+    enemies = enemies.filter((enemy) => !enemy.isMarkedDeletion)
 
   }
 
