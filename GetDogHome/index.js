@@ -7,6 +7,7 @@ const KEY_UP = 'ArrowUp'
 const KEY_RIGHT = 'ArrowRight'
 const KEY_LEFT = 'ArrowLeft'
 let enemies = []
+let score = 0
 
 window.addEventListener('load', () => {
   const canvas = document.getElementById('canvas1')
@@ -220,6 +221,13 @@ window.addEventListener('load', () => {
     })
     enemies = enemies.filter((enemy) => !enemy.isMarkedDeletion)
 
+  function handleDisplayStatusTxt(context) {
+    context.fillStyle = 'black'
+    context.font = '40px  Helvetica'
+    context.fillText('Score:' + score, 20, 50)
+    context.fillStyle = 'white'
+    context.font = '40px  Helvetica'
+    context.fillText('Score:' + score, 18, 49)
   }
 
   const input = new InputHandler()
@@ -234,6 +242,9 @@ window.addEventListener('load', () => {
     background.update()
     player.draw(ctx)
     player.update(deltaTime, input)
+
+    handleDisplayStatusTxt(ctx)
+    handleEnemies(deltaTime)
     requestAnimationFrame(animate)
   }
 
