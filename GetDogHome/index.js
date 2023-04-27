@@ -63,6 +63,8 @@ window.addEventListener('load', () => {
       this.frameInterval = 1000 / this.fps
     }
     draw(context) {
+      context.strokeStyle = 'White'
+      context.strokeRect(this.x, this.y, this.width, this.height)
       context.drawImage(
         this.image,
         this.width * this.frameX,
@@ -172,8 +174,12 @@ window.addEventListener('load', () => {
       this.speed = 8
       this.isMarkedDeletion = false
     }
+    draw(context) {
+      context.strokeStyle = 'white'
+      context.strokeRect(this.x, this.y, this.width, this.height)
       context.drawImage(
         this.image,
+        this.frameX * this.width,
         0,
         this.width,
         this.height,
