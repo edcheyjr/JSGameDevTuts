@@ -55,6 +55,10 @@ window.addEventListener('load', () => {
       this.gravity = 1
       this.offsetPixel = 5
       this.jumpVelocity = 24
+      this.frameTimer = 0
+      this.maxFrame = this.frameY == 1 ? 6 : 8
+      this.fps = 50
+      this.frameInterval = 1000 / this.fps
     }
     draw(context) {
       context.drawImage(
@@ -70,6 +74,19 @@ window.addEventListener('load', () => {
       )
     }
     update(deltaTime, input) {
+      // animating frames
+      if (this.frameTimer > this.frameInterval) {
+        if (this.frameX >= this.maxFrame) {
+          this.frameX = 0
+        } else {
+          this.frameX++
+        }
+        this.frameTimer = 0
+      } else {
+        this.frameTimer += deltaTime
+      }
+
+      // player inputs
       if (input.keys.indexOf(KEY_RIGHT) > -1) {
         this.speed = 5
       } else if (input.keys.indexOf(KEY_LEFT) > -1) {
@@ -143,6 +160,14 @@ window.addEventListener('load', () => {
       this.width = 160
       this.height = 119
       this.image = document.getElementById('enemy')
+      this.x = this.gameWidth
+      this.y = this.gameHeight - this.height
+      this.fps = 20
+      this.frameTimer = 0
+      this.maxFrame = 5
+      this.frameInterval = 1000 / this.fps
+      this.frameX = 0
+      this.speed = 8
     }
     draw() {
       context.drawImage(
@@ -158,6 +183,18 @@ window.addEventListener('load', () => {
       )
     }
     update() {}
+    update(deltaTime) {
+      if (this.frameTimer > this.frameInterval) {
+        if (this.frameX >= this.maxFrame) {
+          this.frameX = 0
+        } else {
+          this.frameX++
+        }
+        this.frameTimer = 0
+      } else {
+        this.frameTimer += deltaTime
+      }
+      this.x -= this.speed
   }
 
   function handleEnemies() {}
