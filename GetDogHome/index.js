@@ -6,6 +6,7 @@ const KEY_DOWN = 'ArrowDown'
 const KEY_UP = 'ArrowUp'
 const KEY_RIGHT = 'ArrowRight'
 const KEY_LEFT = 'ArrowLeft'
+let enemies = []
 
 window.addEventListener('load', () => {
   const canvas = document.getElementById('canvas1')
