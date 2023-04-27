@@ -172,10 +172,8 @@ window.addEventListener('load', () => {
       this.speed = 8
       this.isMarkedDeletion = false
     }
-    draw() {
       context.drawImage(
         this.image,
-        0,
         0,
         this.width,
         this.height,
@@ -185,7 +183,6 @@ window.addEventListener('load', () => {
         this.height
       )
     }
-    update() {}
     update(deltaTime) {
       if (this.frameTimer > this.frameInterval) {
         if (this.frameX >= this.maxFrame) {
@@ -202,7 +199,6 @@ window.addEventListener('load', () => {
     }
   }
 
-  function handleDisplayStatusTxt() {}
   let enemyTimer = 0
   const enemyInterval = 1000
   let randomInterval = Math.random() * 2000 + 100
