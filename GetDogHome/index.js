@@ -197,8 +197,25 @@ window.addEventListener('load', () => {
       this.x -= this.speed
   }
 
-  function handleEnemies() {}
   function handleDisplayStatusTxt() {}
+  let enemyTimer = 0
+  const enemyInterval = 1000
+  let randomInterval = Math.random() * 2000 + 100
+
+  function handleEnemies(deltaTime) {
+    if (enemyTimer > enemyInterval + randomInterval) {
+      enemies.push(new Enemy(CANVAS_WIDTH, CANVAS_HEIGHT))
+      randomInterval = Math.random() * 2000 + 100
+      enemyTimer = 0
+    } else {
+      enemyTimer += deltaTime
+    }
+    enemies.forEach((enemy) => {
+      enemy.draw(ctx)
+      enemy.update(deltaTime)
+    })
+
+  }
 
   const input = new InputHandler()
   const player = new Player(CANVAS_WIDTH, CANVAS_HEIGHT)
