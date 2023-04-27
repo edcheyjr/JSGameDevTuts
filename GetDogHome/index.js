@@ -236,7 +236,9 @@ window.addEventListener('load', () => {
   const ene
 
   // animation loop
-  function animate(deltaTime) {
+  function animate(timeStamp) {
+    const deltaTime = timeStamp - lastTime
+    lastTime = timeStamp
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
     background.draw(ctx)
     background.update()
