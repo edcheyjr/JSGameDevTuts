@@ -268,12 +268,32 @@ window.addEventListener('load', () => {
     enemies = enemies.filter((enemy) => !enemy.isMarkedDeletion)
   }
   function handleDisplayStatusTxt(context) {
+    const scoreTxt = 'Score:'
+    const gameOverTxt = 'GAME OVER! press Enter to restart'
+
+    context.textAlign = 'left'
     context.fillStyle = 'black'
     context.font = '40px  Helvetica'
-    context.fillText('Score:' + score, 20, 50)
+    context.fillText(scoreTxt + score, 20, 50)
     context.fillStyle = 'white'
-    context.font = '40px  Helvetica'
-    context.fillText('Score:' + score, 18, 49)
+    context.fillText(scoreTxt + score, 18, 49)
+    if (GAME_OVER) {
+      context.save()
+      context.globalAlpha = 0.7
+      context.fillStyle = 'black'
+      context.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
+      context.restore()
+      context.textAlign = 'center'
+      context.font = '40px  Montserrat-Alternative'
+      context.fillStyle = 'black'
+      context.fillText(
+        gameOverTxt,
+        CANVAS_WIDTH / 2 - 2.5,
+        CANVAS_HEIGHT / 2 + 2.5
+      )
+      context.fillStyle = 'aqua'
+      context.fillText(gameOverTxt, CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2)
+    }
   }
 
   const input = new InputHandler()
