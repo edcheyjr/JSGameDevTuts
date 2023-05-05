@@ -156,7 +156,11 @@ window.addEventListener('load', () => {
         this.speed = 5
       } else if (input.keys.indexOf(KEY_LEFT) > -1) {
         this.speed = -5
-      } else if (input.keys.indexOf(KEY_UP) > -1 && this.#onGround()) {
+      } else if (
+        (input.keys.indexOf(KEY_UP) > -1 ||
+          input.keys.indexOf(SWIPE_UP) > -1) &&
+        this.#onGround()
+      ) {
         this.vy -= this.jumpVelocity
       } else {
         this.speed = 0
