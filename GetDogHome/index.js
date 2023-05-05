@@ -133,6 +133,10 @@ window.addEventListener('load', () => {
     #onGround() {
       return this.y >= this.gameHeight - this.height - this.offsetPixel
     }
+    restart() {
+      this.x = 80
+      this.y = this.gameHeight - this.height
+    }
   }
 
   class Background {
@@ -160,6 +164,9 @@ window.addEventListener('load', () => {
     update() {
       this.x -= this.speed
       if (this.x < 0 - this.width) this.x = 0
+    }
+    restart() {
+      this.x = 0
     }
   }
   class Enemy {
@@ -227,8 +234,6 @@ window.addEventListener('load', () => {
       enemy.update(deltaTime)
     })
     enemies = enemies.filter((enemy) => !enemy.isMarkedDeletion)
-
-    console.log('enemies', enemies)
   }
   function handleDisplayStatusTxt(context) {
     context.fillStyle = 'black'
@@ -244,6 +249,15 @@ window.addEventListener('load', () => {
   const background = new Background(CANVAS_WIDTH, CANVAS_HEIGHT)
 
   let lastTime = 0
+
+  function restartGame() {
+    player.restart()
+    background.restart()
+    enemies = []
+    score = 0
+    GAME_OVER = false
+    animate(0)
+  }
 
   // animation loop
   function animate(timeStamp) {
