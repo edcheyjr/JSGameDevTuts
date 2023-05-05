@@ -33,7 +33,7 @@ class Raven {
   }
 
   update(deltatime, particles) {
-    console.log('this.sound.src', this.sound.src)
+    // console.log('this.sound.src', this.sound.src)
     if (this.frame === 0 && this.isPlaySound === 1) {
       this.sound.play().catch((E) => {
         console.error('Error', E)
