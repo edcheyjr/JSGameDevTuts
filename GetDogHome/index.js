@@ -6,6 +6,10 @@ const KEY_DOWN = 'ArrowDown'
 const KEY_UP = 'ArrowUp'
 const KEY_RIGHT = 'ArrowRight'
 const KEY_LEFT = 'ArrowLeft'
+const ENTER = 'Enter'
+const SWIPE_UP = 'SwipeUp'
+const SWIPE_DOWN = 'SwipeDown'
+
 let enemies = []
 let score = 0
 
