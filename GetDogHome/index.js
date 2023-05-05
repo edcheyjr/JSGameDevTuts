@@ -52,7 +52,7 @@ window.addEventListener('load', () => {
       this.gameHeight = gameHeight
       this.width = 200
       this.height = 200
-      this.x = 0
+      this.x = 80
       this.y = gameHeight - this.height
       this.image = document.querySelector('#player')
       this.frameX = 0
@@ -61,11 +61,12 @@ window.addEventListener('load', () => {
       this.vy = 0
       this.gravity = 1
       this.offsetPixel = 5
-      this.jumpVelocity = 24
+      this.jumpVelocity = 28
       this.frameTimer = 0
       this.maxFrame = this.frameY == 1 ? 6 : 8
       this.fps = 50
       this.frameInterval = 1000 / this.fps
+      this.collided = false
     }
     draw(context) {
       // context.strokeStyle = 'White'
