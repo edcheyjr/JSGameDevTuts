@@ -8,7 +8,6 @@ function getLocalStorageItems(key) {
 }
 function setLocalStorageItems(key, value) {
   localStorage.setItem(key, value)
-  return data
 }
 
 const canvas = document.getElementById('canvas1')
@@ -44,22 +43,26 @@ const raven_sounds = [
 ]
 
 function drawScore() {
+  const ScoreTxt = 'SCORE: '
   ctx.font = '900 32px Arial'
   ctx.fillStyle = 'black'
-  ctx.fillText('SCORE: ' + score, 50, 75)
+  ctx.fillText(ScoreTxt + score, 50, 75)
   ctx.fillStyle = 'white'
-  ctx.fillText('SCORE: ' + score, 54, 78)
+  ctx.fillText(ScoreTxt + score, 54, 78)
 }
 
 function drawBestScore() {
+  const HighScoreTxt = 'HIGHEST SCORE: '
   ctx.font = '900 32px Arial'
   ctx.fillStyle = 'black'
-  ctx.fillText('HIGHEST SCORE: ' + currentHighestScore, canvas.width - 430, 75)
+  ctx.fillText(HighScoreTxt + currentHighestScore, canvas.width - 430, 75)
   ctx.fillStyle = 'white'
-  ctx.fillText('HIGHEST SCORE: ' + currentHighestScore, canvas.width - 434, 78)
+  ctx.fillText(HighScoreTxt + currentHighestScore, canvas.width - 434, 78)
 }
 
 function drawGameOver() {
+  const NewScoreTxt = `GAME OVER NEW SCORE: ${score}!!!`
+  const GameOverTxt = `GAME OVER YOUR SCORE: ${score}`
   ctx.save()
   ctx.fillStyle = 'Black'
   ctx.globalAlpha = 0.5
@@ -70,27 +73,19 @@ function drawGameOver() {
   ctx.fillStyle = 'Black'
   if (score > currentHighestScore) {
     // say gameover show that the new high score
-    ctx.fillText(
-      `GAME OVER NEW SCORE: ${score}!!!`,
-      canvas.width / 2 - 15,
-      canvas.height / 2 - 15
-    )
+    ctx.fillText(NewScoreTxt, canvas.width / 2 - 15, canvas.height / 2 - 15)
     ctx.fillStyle = 'White'
     ctx.fillText(
-      `GAME OVER NEW SCORE: ${score}!!!`,
+      NewScoreTxt,
       canvas.width / 2 - 15 + 3,
       canvas.height / 2 - 15 + 3
     )
     setLocalStorageItems(highestScoreKey, score)
   } else {
-    ctx.fillText(
-      `GAME OVER YOUR SCORE: ${score}`,
-      canvas.width / 2 - 15,
-      canvas.height / 2 - 15
-    )
+    ctx.fillText(GameOverTxt, canvas.width / 2 - 15, canvas.height / 2 - 15)
     ctx.fillStyle = 'White'
     ctx.fillText(
-      `GAME OVER YOUR SCORE: ${score}`,
+      GameOverTxt,
       canvas.width / 2 - 15 + 3,
       canvas.height / 2 - 15 + 3
     )
@@ -115,6 +110,7 @@ for (let i = 0; i < maxNoOfHearts; i++) {
   hearts.push(new Heart(50, 90, 45))
 }
 
+// click event
 window.addEventListener('click', (e) => {
   const detectPixelColor = collusionCtx.getImageData(e.x, e.y, 1, 1)
   const pc = detectPixelColor.data
