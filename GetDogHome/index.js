@@ -23,6 +23,10 @@ window.addEventListener('load', () => {
   class InputHandler {
     constructor() {
       this.keys = []
+      this.touchY = ''
+      this.touchTreshold = 30
+
+      //keypress events
       window.addEventListener('keydown', (e) => {
         if (
           (e.key == KEY_DOWN ||
@@ -32,6 +36,8 @@ window.addEventListener('load', () => {
           this.keys.indexOf(e.key) === -1
         ) {
           this.keys.push(e.key)
+        } else if (e.key == ENTER && GAME_OVER) {
+          restartGame()
         }
       })
       window.addEventListener('keyup', (e) => {
@@ -43,6 +49,34 @@ window.addEventListener('load', () => {
         ) {
           this.keys.splice(this.keys.indexOf(e.key), 1)
         }
+      })
+
+      // Touch events
+      window.addEventListener('touchstart', (e) => {
+        this.touchY = e.changedTouches[0].pageY
+      })
+      window.addEventListener('touchmove', (e) => {
+        // console.log(e)
+        const swipeDistance = e.changedTouches[0].pageY - this.touchY
+        if (
+          swipeDistance < -this.touchTreshold &&
+          this.keys.indexOf(SWIPE_UP) === -1
+        ) {
+          this.keys.push(SWIPE_UP)
+        } else if (
+          swipeDistance > this.touchTreshold &&
+          this.keys.indexOf(SWIPE_DOWN) === -1
+        ) {
+          this.keys.push(SWIPE_DOWN)
+          if (GAME_OVER) {
+            restartGame()
+          }
+        }
+      })
+      window.addEventListener('touchend', (e) => {
+        // clean up keys
+        this.keys.splice(this.keys.indexOf(SWIPE_UP), 1)
+        this.keys.splice(this.keys.indexOf(SWIPE_DOWN), 1)
       })
     }
   }
