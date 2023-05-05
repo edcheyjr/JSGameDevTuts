@@ -301,10 +301,11 @@ window.addEventListener('load', () => {
     player.draw(ctx)
     player.update(deltaTime, input, enemies)
 
-    handleDisplayStatusTxt(ctx)
     handleEnemies(deltaTime)
-    requestAnimationFrame(animate)
+    GAME_OVER || requestAnimationFrame(animate)
+    handleDisplayStatusTxt(ctx) //should be the last in order to overlay the other objects
   }
 
+  // only animate when not gameover
   animate(0)
 })
