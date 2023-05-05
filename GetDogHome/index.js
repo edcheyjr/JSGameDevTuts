@@ -12,6 +12,7 @@ const SWIPE_DOWN = 'SwipeDown'
 
 let enemies = []
 let score = 0
+let GAME_OVER = false
 
 window.addEventListener('load', () => {
   const canvas = document.getElementById('canvas1')
