@@ -68,8 +68,17 @@ window.addEventListener('load', () => {
       this.frameInterval = 1000 / this.fps
     }
     draw(context) {
-      context.strokeStyle = 'White'
-      context.strokeRect(this.x, this.y, this.width, this.height)
+      // context.strokeStyle = 'White'
+      // context.strokeRect(this.x, this.y, this.width, this.height)
+      // context.beginPath()
+      // context.arc(
+      //   this.x + this.width / 2,
+      //   this.y + this.height / 2,
+      //   this.width / 2,
+      //   0,
+      //   Math.PI * 2
+      // )
+      // context.stroke()
       context.drawImage(
         this.image,
         this.width * this.frameX,
@@ -82,7 +91,19 @@ window.addEventListener('load', () => {
         this.height
       )
     }
-    update(deltaTime, input) {
+    update(deltaTime, input, enemies) {
+      // collusion detection
+      enemies.forEach((enemy) => {
+        const dx = enemy.x + enemy.width / 2 - (this.x + this.width / 2) //distance in x plane between the two cirle
+        const dy = enemy.y + enemy.height / 2 - (this.y + this.height / 2) // distance in y plane between the two circle
+
+        const distance = Math.sqrt(dx * dx + dy * dy) //hypo
+        // console.log('distance', distance < enemy.width / 2 + this.width / 2)
+        if (distance < enemy.width / 2 + this.width / 2) {
+          this.collided = true
+          GAME_OVER = true
+        }
+      })
       // animating frames
       if (this.frameTimer > this.frameInterval) {
         if (this.frameX >= this.maxFrame) {
@@ -187,8 +208,18 @@ window.addEventListener('load', () => {
       this.isMarkedDeletion = false
     }
     draw(context) {
-      context.strokeStyle = 'white'
-      context.strokeRect(this.x, this.y, this.width, this.height)
+      // context.strokeStyle = 'white'
+      // context.strokeRect(this.x, this.y, this.width, this.height)
+      // context.strokeRect(this.x, this.y, this.width, this.height)
+      // context.beginPath()
+      // context.arc(
+      //   this.x + this.width / 2,
+      //   this.y + this.height / 2,
+      //   this.width / 2,
+      //   0,
+      //   Math.PI * 2
+      // )
+      // context.stroke()
       context.drawImage(
         this.image,
         this.frameX * this.width,
@@ -267,7 +298,7 @@ window.addEventListener('load', () => {
     background.draw(ctx)
     background.update()
     player.draw(ctx)
-    player.update(deltaTime, input)
+    player.update(deltaTime, input, enemies)
 
     handleDisplayStatusTxt(ctx)
     handleEnemies(deltaTime)
