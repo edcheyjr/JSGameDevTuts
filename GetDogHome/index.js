@@ -465,10 +465,7 @@ window.addEventListener('load', () => {
     GAME_OVER || requestAnimationFrame(animate)
     handleHighScore(ctx)
     handleDisplayStatusTxt(ctx) //should be the last in order to overlay the other objects
-
-    // handleHighScore
   }
-
   // only animate when not gameover
   animate(0)
 
