@@ -17,6 +17,8 @@ const KEY_LEFT = 'ArrowLeft'
 const ENTER = 'Enter'
 const SWIPE_UP = 'SwipeUp'
 const SWIPE_DOWN = 'SwipeDown'
+const SWIPE_RIGHT = 'SwipeRight'
+const SWIPE_LEFT = 'SwipeLeft'
 
 let enemies = []
 let score = 0
@@ -32,7 +34,9 @@ window.addEventListener('load', () => {
     constructor() {
       this.keys = []
       this.touchY = ''
+      this.touchX = ''
       this.touchTreshold = 30
+      this.rightTouchTreshold = 60
 
       //keypress events
       window.addEventListener('keydown', (e) => {
@@ -61,30 +65,46 @@ window.addEventListener('load', () => {
 
       // Touch events
       window.addEventListener('touchstart', (e) => {
+        // console.log('change touches', e.changedTouches[0])
         this.touchY = e.changedTouches[0].pageY
+        this.touchX = e.changedTouches[0].pageX
       })
       window.addEventListener('touchmove', (e) => {
         // console.log(e)
-        const swipeDistance = e.changedTouches[0].pageY - this.touchY
+        const swipeYDistance = e.changedTouches[0].pageY - this.touchY
+        const swipeXDistance = e.changedTouches[0].pageX - this.touchX
         if (
-          swipeDistance < -this.touchTreshold &&
+          swipeYDistance < -this.touchTreshold &&
           this.keys.indexOf(SWIPE_UP) === -1
         ) {
           this.keys.push(SWIPE_UP)
         } else if (
-          swipeDistance > this.touchTreshold &&
+          swipeYDistance > this.touchTreshold &&
           this.keys.indexOf(SWIPE_DOWN) === -1
         ) {
           this.keys.push(SWIPE_DOWN)
           if (GAME_OVER) {
             restartGame()
           }
+        } else if (
+          swipeXDistance < this.rightTouchTreshold &&
+          this.keys.indexOf(SWIPE_RIGHT) === -1
+        ) {
+          this.keys.push(SWIPE_RIGHT)
+        } else if (
+          swipeXDistance < -this.rightTouchTreshold &&
+          this.keys.indexOf(SWIPE_LEFT) === -1
+        ) {
+          this.keys.push(SWIPE_LEFT)
         }
       })
       window.addEventListener('touchend', (e) => {
+        console.log('keys', this.keys)
         // clean up keys
         this.keys.splice(this.keys.indexOf(SWIPE_UP), 1)
         this.keys.splice(this.keys.indexOf(SWIPE_DOWN), 1)
+        this.keys.splice(this.keys.indexOf(SWIPE_RIGHT), 1)
+        this.keys.splice(this.keys.indexOf(SWIPE_LEFT), 1)
       })
     }
   }
@@ -160,11 +180,24 @@ window.addEventListener('load', () => {
       }
 
       // player inputs
-      if (input.keys.indexOf(KEY_RIGHT) > -1) {
+
+      //left right inputs
+      if (
+        input.keys.indexOf(KEY_RIGHT) > -1 ||
+        input.keys.indexOf(SWIPE_RIGHT) > -1
+      ) {
         this.speed = 5
-      } else if (input.keys.indexOf(KEY_LEFT) > -1) {
-        this.speed = -5
       } else if (
+        input.keys.indexOf(KEY_LEFT) > -1 ||
+        input.keys.indexOf(SWIPE_LEFT) > -1
+      ) {
+        this.speed = -5
+      } else {
+        this.speed = 0
+      }
+
+      // vertical inputs
+      if (
         (input.keys.indexOf(KEY_UP) > -1 ||
           input.keys.indexOf(SWIPE_UP) > -1) &&
         this.#onGround()
