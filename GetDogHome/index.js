@@ -379,6 +379,62 @@ window.addEventListener('load', () => {
       context.fillText(gameOverTxt, CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2)
     }
   }
+  /**
+   *
+   * @param {any} context
+   * @return {void}
+   */
+  function handleHighScore(context) {
+    const SHADOW_TEXT_WIDTH = CANVAS_WIDTH - 48
+    const SHADOW_TEXT_HEIGHT = 50
+    const TEXT_WIDTH = CANVAS_WIDTH - 50
+    const TEXT_HEIGHT = 49
+
+    const highScoreTxt = 'High Score:'
+    const highScore = getLocalStorageItems(highScoreTxt)
+    context.textAlign = 'right'
+    context.fillStyle = 'black'
+    context.font = '40px  Helvetica'
+    if (highScore) {
+      context.fillText(
+        highScoreTxt + highScore,
+        SHADOW_TEXT_WIDTH,
+        SHADOW_TEXT_HEIGHT
+      )
+      context.fillStyle = 'white'
+      context.fillText(highScoreTxt + highScore, TEXT_WIDTH, TEXT_HEIGHT)
+    } else {
+      context.fillText(
+        highScoreTxt + score,
+        SHADOW_TEXT_WIDTH,
+        SHADOW_TEXT_HEIGHT
+      )
+      context.fillStyle = 'white'
+      context.fillText(highScoreTxt + score, TEXT_WIDTH, TEXT_HEIGHT)
+      // when game is over
+      if (GAME_OVER) {
+        setLocalStorageItems(highScoreTxt, score)
+      }
+    }
+    if (score > highScore) {
+      // context.save()
+      // const WowHighScore = 'Wow! New High Score ' + score
+      // context.font = '40px  Helvetica'
+      // context.fillStyle = 'white'
+      // context.fillText(WowHighScore, CANVAS_WIDTH / 2 - 180, 100)
+      // // do a cool animation with gobal alpha on atext prompting highscore
+      // TimeoutID = setTimeout(() => {
+      //   for (let i = 0; i < 10; i++) {
+      //     context.globalAlpha = 1 - 0.1
+      //   }
+      //   context.fillText('', CANVAS_WIDTH / 2 - 150, 100)
+      // }, 2000)
+      if (GAME_OVER) {
+        setLocalStorageItems(highScoreTxt, score)
+      }
+      // context.restore()
+    }
+  }
 
   const input = new InputHandler()
   const player = new Player(CANVAS_WIDTH, CANVAS_HEIGHT)
@@ -407,9 +463,15 @@ window.addEventListener('load', () => {
 
     handleEnemies(deltaTime)
     GAME_OVER || requestAnimationFrame(animate)
+    handleHighScore(ctx)
     handleDisplayStatusTxt(ctx) //should be the last in order to overlay the other objects
+
+    // handleHighScore
   }
 
   // only animate when not gameover
   animate(0)
+
+  // once loop ends
+  clearTimeout(TimeoutID)
 })
