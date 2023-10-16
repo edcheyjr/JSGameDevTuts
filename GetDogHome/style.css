@@ -22,3 +22,11 @@ body {
 #enemy {
   display: none;
 }
+#fullscreenBtn {
+  position: absolute;
+  font-family: 20px;
+  padding: 10px;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%);
+}
