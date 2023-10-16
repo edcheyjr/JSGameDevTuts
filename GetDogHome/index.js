@@ -2,6 +2,14 @@
  * @type {HTMLCanvasElement} Canvas Methods
  */
 
+// utils function
+function getLocalStorageItems(key) {
+  return localStorage.getItem(key)
+}
+function setLocalStorageItems(key, value) {
+  localStorage.setItem(key, value)
+}
+
 const KEY_DOWN = 'ArrowDown'
 const KEY_UP = 'ArrowUp'
 const KEY_RIGHT = 'ArrowRight'
