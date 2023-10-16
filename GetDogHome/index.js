@@ -23,9 +23,11 @@ const SWIPE_LEFT = 'SwipeLeft'
 let enemies = []
 let score = 0
 let GAME_OVER = false
+let TimeoutID = 0
 
 window.addEventListener('load', () => {
   const canvas = document.getElementById('canvas1')
+  const fullscreenBtn = document.getElementById('fullscreenBtn')
   const CANVAS_WIDTH = (canvas.width = 800)
   const CANVAS_HEIGHT = (canvas.height = 720)
   const ctx = canvas.getContext('2d')
@@ -203,8 +205,6 @@ window.addEventListener('load', () => {
         this.#onGround()
       ) {
         this.vy -= this.jumpVelocity
-      } else {
-        this.speed = 0
       }
       // horizontal movement;
       this.x += this.speed
@@ -324,7 +324,10 @@ window.addEventListener('load', () => {
         this.frameTimer += deltaTime
       }
       this.x -= this.speed
-      if (this.x < 0 - this.width) this.isMarkedDeletion = true
+      if (this.x < 0 - this.width) {
+        this.isMarkedDeletion = true
+        score += 1
+      }
     }
   }
 
@@ -356,6 +359,8 @@ window.addEventListener('load', () => {
     context.fillText(scoreTxt + score, 20, 50)
     context.fillStyle = 'white'
     context.fillText(scoreTxt + score, 18, 49)
+
+    // GAME OVER TXT
     if (GAME_OVER) {
       context.save()
       context.globalAlpha = 0.7
